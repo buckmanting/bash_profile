@@ -1,35 +1,47 @@
+## Super simple bash_profile
+
+# Functions
+
+# show git branch in path
+parse_git_branch() {
+      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+  }
+
 # Aliases
 
- # navigation
- alias ..='cd ..'
+# navigation
+alias ..='cd ..'
 
- # open application
- alias ws='open -a /Applications/WebStorm.app '
+# open application
+alias ws='open -a /Applications/WebStorm.app '
+alias vault='/Applications/vault '
 
- # quaility of life shit
- alias ls='ls -G'
- alias ll='ls -Gla'
- alias grep='grep --color=auto'
- alias egrep='egrep --color=auto'
- alias fgrep='fgrep --color=auto'
+# quaility of life shit
+alias ls='ls -G'
+alias ll='ls -Gla'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
 
- # show open ports
- alias ports='netstat -tulanp'
+# show open ports
+alias ports='netstat -tulanp'
 
- # git helpers
- alias gs='git status'
- alias gd='git diff'
- alias pull='git pull'
- alias push='git push'
- alias fetch='git fetch -ap'
- alias merge-base='git merge-base master '
- alias git-history='git log --graph --abbrev-commit --pretty=oneline'
+# git helpers
+alias gs='git status'
+alias gd='git diff'
+alias pull='git pull'
+alias push='git push'
+alias fetch='git fetch -ap'
+alias merge-base='git merge-base master '
+alias git-history='git log --graph --abbrev-commit --pretty=oneline'
+alias gcom='git commit -am ' 
 
- # Functions
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
- # show git branch in path
- parse_git_branch() {
-       git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-   }
+# Bash theming
+export PS1="\[\e[31m\]\t\[\e[m\] \u \w \[\033[32m\]\$(parse_git_branch)\[\033[00m\] \\$ "
 
- export PS1="\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
+
