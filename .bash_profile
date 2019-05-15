@@ -35,7 +35,7 @@ alias fetch='git fetch -ap'
 alias merge-base='git merge-base master '
 alias git-history='git log --graph --abbrev-commit --pretty=oneline'
 alias gcom='git commit -am ' 
-alias rm-old-branches='git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D'
+alias rm-old-branches='git branch -vv | grep ": gone]" | awk '{print $1}' | xargs git branch -D'
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
