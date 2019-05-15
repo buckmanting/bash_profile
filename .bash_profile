@@ -43,6 +43,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Bash theming
-export PS1="\[\e[31m\]\t\[\e[m\] \u \w \[\033[32m\]\$(parse_git_branch)\[\033[00m\] \\$ "
+export PS1="\w \[\033[32m\]\$(parse_git_branch)\[\033[00m\] \\$ "
 
 
