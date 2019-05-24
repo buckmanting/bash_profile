@@ -15,7 +15,6 @@ alias ..='cd ..'
 # open application
 alias ws='open -a /Applications/WebStorm.app '
 alias vault='/Applications/vault '
-alias fly='/Applications/fly '
 
 # quaility of life shit
 alias ls='ls -G'
