@@ -22,6 +22,7 @@ alias ll='ls -Gla'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
+alias ccat='pygmentize -g -O style=colorful,linenos=1'
 
 # show open ports
 alias ports='netstat -tulanp'
